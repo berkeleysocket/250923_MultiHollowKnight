@@ -1,29 +1,32 @@
 using UnityEngine;
 
-[RequireComponent(typeof(SpriteRenderer))]
-public class Renderer : MonoBehaviour
+namespace Ksy.Entity.Compo
 {
-    private SpriteRenderer _spRenderer;
-    public bool IsFilp { get; private set;  }
-
-    private void Awake()
+    [RequireComponent(typeof(SpriteRenderer))]
+    public class Renderer : MonoBehaviour
     {
-        _spRenderer = GetComponent<SpriteRenderer>();
+        private SpriteRenderer _spRenderer;
+        public bool IsFilp { get; private set; }
 
-        Debug.Assert(_spRenderer != null, "<color=red>_spRenderer is null!!</color>");
-    }
-    public void FilpX(Vector2 mousePos)
-    {
-        Vector2 dir = mousePos - (Vector2)transform.position;
-        bool flip = dir.x < 0;
+        private void Awake()
+        {
+            _spRenderer = GetComponent<SpriteRenderer>();
 
-        _spRenderer.flipX = flip;
-        IsFilp = flip;
-    }
+            Debug.Assert(_spRenderer != null, "<color=red>_spRenderer is null!!</color>");
+        }
+        public void FilpX(Vector2 mousePos)
+        {
+            Vector2 dir = mousePos - (Vector2)transform.position;
+            bool flip = dir.x < 0;
 
-    public void FilpX(bool value)
-    {
-        _spRenderer.flipX = value;
-        IsFilp = value;
+            _spRenderer.flipX = flip;
+            IsFilp = flip;
+        }
+
+        public void FilpX(bool value)
+        {
+            _spRenderer.flipX = value;
+            IsFilp = value;
+        }
     }
 }

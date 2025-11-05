@@ -1,38 +1,41 @@
 using UnityEngine;
 
-public class Player : Entity
+namespace Ksy.Entity.Compo
 {
-    [SerializeField] private InputInfo_Player inputInfo;
-    public Movement MovementCompo { get; private set; }
-    public Renderer RendererCompo { get; private set; }
-    public AnimationPlayer AniPlayerCompo { get; private set; }
-
-    private void Awake()
+    public class Player : Entity
     {
-        MovementCompo = GetComponent<Movement>();
+        [SerializeField] private InputInfo_Player inputInfo;
+        public Movement MovementCompo { get; private set; }
+        public Renderer RendererCompo { get; private set; }
+        public AnimationPlayer AniPlayerCompo { get; private set; }
 
-        AniPlayerCompo = GetComponentInChildren<AnimationPlayer>();
-        RendererCompo = GetComponentInChildren<Renderer>();
+        private void Awake()
+        {
+            MovementCompo = GetComponent<Movement>();
 
-        Debug.Assert(MovementCompo != null, "<color=red>MovementCompo is null!!</color>");
+            AniPlayerCompo = GetComponentInChildren<AnimationPlayer>();
+            RendererCompo = GetComponentInChildren<Renderer>();
 
-        Debug.Assert(AniPlayerCompo != null, "<color=red>AniPlayerCompo is null!!</color>");
-        Debug.Assert(RendererCompo != null, "<color=red>RendererCompo is null!!</color>");
+            Debug.Assert(MovementCompo != null, "<color=red>MovementCompo is null!!</color>");
 
-        if (MovementCompo != null && inputInfo != null)
-            inputInfo.OnChangedPlayerPos += MovementCompo.SetMoveDir;
+            Debug.Assert(AniPlayerCompo != null, "<color=red>AniPlayerCompo is null!!</color>");
+            Debug.Assert(RendererCompo != null, "<color=red>RendererCompo is null!!</color>");
 
-        if (AniPlayerCompo != null && inputInfo != null)
-            inputInfo.OnChangedPlayerPos += (dir) =>
-            {
-                AniParmType parmT = AniParmType.IsMove;
-                bool isMove = dir != Vector2.zero;
+            if (MovementCompo != null && inputInfo != null)
+                inputInfo.OnChangedPlayerPos += MovementCompo.SetMoveDir;
 
-                AniPlayerCompo.SetAnimation(parmT, isMove);
-            };
-        if (RendererCompo != null && inputInfo != null)
-            inputInfo.OnChangedMousePos += RendererCompo.FilpX;
-        if (inputInfo != null)
-            inputInfo.OnLeftClicked += (pos) => Debug.Log($"<color=yellow>Left Click!! / Pos : {pos}");
+            if (AniPlayerCompo != null && inputInfo != null)
+                inputInfo.OnChangedPlayerPos += (dir) =>
+                {
+                    AniParmType parmT = AniParmType.IsMove;
+                    bool isMove = dir != Vector2.zero;
+
+                    AniPlayerCompo.SetAnimation(parmT, isMove);
+                };
+            if (RendererCompo != null && inputInfo != null)
+                inputInfo.OnChangedMousePos += RendererCompo.FilpX;
+            if (inputInfo != null)
+                inputInfo.OnLeftClicked += (pos) => Debug.Log($"<color=yellow>Left Click!! / Pos : {pos}");
+        }
     }
 }

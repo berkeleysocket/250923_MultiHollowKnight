@@ -1,46 +1,49 @@
 using UnityEngine;
 
-public class AnimationPlayer : MonoBehaviour
+namespace Ksy.Entity.Compo
 {
-    private Animator _animator;
-
-    private readonly int _hash_IsMove = Animator.StringToHash("IsMove");
-    private void Awake()
+    public class AnimationPlayer : MonoBehaviour
     {
-        _animator = GetComponent<Animator>();
+        private Animator _animator;
 
-        Debug.Assert(_animator != null, "<color=red>_animator is null!!<color>");
-    }
-    public void SetAnimation(AniParmType parmT, bool value)
-    {
-        int? hash = ReturnHash(parmT);
-
-        if(hash != null)
-            _animator.SetBool((int)hash, value);
-    }
-    private int? ReturnHash(AniParmType parm)
-    {
-        switch(parm)
+        private readonly int _hash_IsMove = Animator.StringToHash("IsMove");
+        private void Awake()
         {
-            case AniParmType.None:
-                {
-                    break;
-                }
-            case AniParmType.IsMove:
-                {
-                    return _hash_IsMove;
-                }
-            default:
-                {
-                    break;
-                }
-        }
+            _animator = GetComponent<Animator>();
 
-        return null;
+            Debug.Assert(_animator != null, "<color=red>_animator is null!!<color>");
+        }
+        public void SetAnimation(AniParmType parmT, bool value)
+        {
+            int? hash = ReturnHash(parmT);
+
+            if (hash != null)
+                _animator.SetBool((int)hash, value);
+        }
+        private int? ReturnHash(AniParmType parm)
+        {
+            switch (parm)
+            {
+                case AniParmType.None:
+                    {
+                        break;
+                    }
+                case AniParmType.IsMove:
+                    {
+                        return _hash_IsMove;
+                    }
+                default:
+                    {
+                        break;
+                    }
+            }
+
+            return null;
+        }
     }
-}
-public enum AniParmType
-{
-    None,
-    IsMove,
+    public enum AniParmType
+    {
+        None,
+        IsMove,
+    }
 }

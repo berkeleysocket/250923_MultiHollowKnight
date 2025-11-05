@@ -1,6 +1,9 @@
 using UnityEngine;
 
-public class Entity : MonoBehaviour
+namespace Ksy.Entity
 {
+    public class Entity : MonoBehaviour
+    {
 
+    }
 }
