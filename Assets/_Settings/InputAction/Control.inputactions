@@ -7,7 +7,7 @@
             "id": "5bd20dc7-60a3-491f-bb1b-e8fdd29ea4a9",
             "actions": [
                 {
-                    "name": "Move",
+                    "name": "Move_Horaizontal",
                     "type": "Value",
                     "id": "b015af1d-d06a-4ae5-a711-a5a91ad3ed3a",
                     "expectedControlType": "Vector2",
@@ -24,18 +24,18 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Move",
+                    "action": "Move_Horaizontal",
                     "isComposite": true,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "up",
                     "id": "746c1a69-8713-4ee6-8f08-d010ff187a47",
-                    "path": "<Keyboard>/upArrow",
+                    "path": "<Keyboard>/z",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Move",
+                    "action": "Move_Horaizontal",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -46,7 +46,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Move",
+                    "action": "Move_Horaizontal",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -57,7 +57,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Move",
+                    "action": "Move_Horaizontal",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -68,7 +68,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Move",
+                    "action": "Move_Horaizontal",
                     "isComposite": false,
                     "isPartOfComposite": true
                 }

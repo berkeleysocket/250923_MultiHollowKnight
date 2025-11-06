@@ -93,7 +93,7 @@ public partial class @Control: IInputActionCollection2, IDisposable
             ""id"": ""5bd20dc7-60a3-491f-bb1b-e8fdd29ea4a9"",
             ""actions"": [
                 {
-                    ""name"": ""Move"",
+                    ""name"": ""Move_Horaizontal"",
                     ""type"": ""Value"",
                     ""id"": ""b015af1d-d06a-4ae5-a711-a5a91ad3ed3a"",
                     ""expectedControlType"": ""Vector2"",
@@ -110,18 +110,18 @@ public partial class @Control: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Move"",
+                    ""action"": ""Move_Horaizontal"",
                     ""isComposite"": true,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": ""up"",
                     ""id"": ""746c1a69-8713-4ee6-8f08-d010ff187a47"",
-                    ""path"": ""<Keyboard>/upArrow"",
+                    ""path"": ""<Keyboard>/z"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Move"",
+                    ""action"": ""Move_Horaizontal"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
@@ -132,7 +132,7 @@ public partial class @Control: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Move"",
+                    ""action"": ""Move_Horaizontal"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
@@ -143,7 +143,7 @@ public partial class @Control: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Move"",
+                    ""action"": ""Move_Horaizontal"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
@@ -154,7 +154,7 @@ public partial class @Control: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Move"",
+                    ""action"": ""Move_Horaizontal"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 }
@@ -165,7 +165,7 @@ public partial class @Control: IInputActionCollection2, IDisposable
 }");
         // Keyboard
         m_Keyboard = asset.FindActionMap("Keyboard", throwIfNotFound: true);
-        m_Keyboard_Move = m_Keyboard.FindAction("Move", throwIfNotFound: true);
+        m_Keyboard_Move_Horaizontal = m_Keyboard.FindAction("Move_Horaizontal", throwIfNotFound: true);
     }
 
     ~@Control()
@@ -246,7 +246,7 @@ public partial class @Control: IInputActionCollection2, IDisposable
     // Keyboard
     private readonly InputActionMap m_Keyboard;
     private List<IKeyboardActions> m_KeyboardActionsCallbackInterfaces = new List<IKeyboardActions>();
-    private readonly InputAction m_Keyboard_Move;
+    private readonly InputAction m_Keyboard_Move_Horaizontal;
     /// <summary>
     /// Provides access to input actions defined in input action map "Keyboard".
     /// </summary>
@@ -259,9 +259,9 @@ public partial class @Control: IInputActionCollection2, IDisposable
         /// </summary>
         public KeyboardActions(@Control wrapper) { m_Wrapper = wrapper; }
         /// <summary>
-        /// Provides access to the underlying input action "Keyboard/Move".
+        /// Provides access to the underlying input action "Keyboard/Move_Horaizontal".
         /// </summary>
-        public InputAction @Move => m_Wrapper.m_Keyboard_Move;
+        public InputAction @Move_Horaizontal => m_Wrapper.m_Keyboard_Move_Horaizontal;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -288,9 +288,9 @@ public partial class @Control: IInputActionCollection2, IDisposable
         {
             if (instance == null || m_Wrapper.m_KeyboardActionsCallbackInterfaces.Contains(instance)) return;
             m_Wrapper.m_KeyboardActionsCallbackInterfaces.Add(instance);
-            @Move.started += instance.OnMove;
-            @Move.performed += instance.OnMove;
-            @Move.canceled += instance.OnMove;
+            @Move_Horaizontal.started += instance.OnMove_Horaizontal;
+            @Move_Horaizontal.performed += instance.OnMove_Horaizontal;
+            @Move_Horaizontal.canceled += instance.OnMove_Horaizontal;
         }
 
         /// <summary>
@@ -302,9 +302,9 @@ public partial class @Control: IInputActionCollection2, IDisposable
         /// <seealso cref="KeyboardActions" />
         private void UnregisterCallbacks(IKeyboardActions instance)
         {
-            @Move.started -= instance.OnMove;
-            @Move.performed -= instance.OnMove;
-            @Move.canceled -= instance.OnMove;
+            @Move_Horaizontal.started -= instance.OnMove_Horaizontal;
+            @Move_Horaizontal.performed -= instance.OnMove_Horaizontal;
+            @Move_Horaizontal.canceled -= instance.OnMove_Horaizontal;
         }
 
         /// <summary>
@@ -346,11 +346,11 @@ public partial class @Control: IInputActionCollection2, IDisposable
     public interface IKeyboardActions
     {
         /// <summary>
-        /// Method invoked when associated input action "Move" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// Method invoked when associated input action "Move_Horaizontal" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
         /// </summary>
         /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
-        void OnMove(InputAction.CallbackContext context);
+        void OnMove_Horaizontal(InputAction.CallbackContext context);
     }
 }

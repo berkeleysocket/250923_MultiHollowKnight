@@ -16,6 +16,7 @@ namespace Ksy.Entity.Compo
         }
         public void FilpX(Vector2 dir)
         {
+            if (dir == Vector2.zero) return;
             bool flip = dir.x < 0;
 
             _spRenderer.flipX = flip;

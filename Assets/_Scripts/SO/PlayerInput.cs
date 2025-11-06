@@ -29,8 +29,7 @@ public class PlayerInput : ScriptableObject, IKeyboardActions
     }
     #endregion
 
-    //플레이어가 이동 키를 누를 때 마다 호출되는 이벤트.
-    public void OnMove(InputAction.CallbackContext context)
+    public void OnMove_Horaizontal(InputAction.CallbackContext context)
     {
         //이벤트가 호출되어서 움직이고 있는 방향 값을 넘겨줌.
         Vector2 dir = context.ReadValue<Vector2>();

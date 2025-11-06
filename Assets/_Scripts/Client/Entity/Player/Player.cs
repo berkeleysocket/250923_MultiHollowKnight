@@ -33,6 +33,7 @@ namespace Ksy.Entity.Compo
 
                     _aniPlayer.SetAnimation(parmT, isMove);
                 };
+
             if (_randerer != null && _controller != null)
                 _controller.MoveDir.OnChangedValue += _randerer.FilpX;
         }
