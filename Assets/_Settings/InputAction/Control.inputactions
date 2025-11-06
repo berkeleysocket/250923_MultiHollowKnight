@@ -1,42 +1,25 @@
 {
+    "version": 1,
     "name": "Control",
     "maps": [
         {
-            "name": "Player",
-            "id": "565eacc6-e90f-4986-acbf-0f81a1bd61da",
+            "name": "Keyboard",
+            "id": "5bd20dc7-60a3-491f-bb1b-e8fdd29ea4a9",
             "actions": [
                 {
                     "name": "Move",
                     "type": "Value",
-                    "id": "85b01179-7000-4766-b014-80c180ffb288",
+                    "id": "b015af1d-d06a-4ae5-a711-a5a91ad3ed3a",
                     "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
-                },
-                {
-                    "name": "Aim",
-                    "type": "Value",
-                    "id": "1603add7-dcb0-4864-888b-0813078f5f6b",
-                    "expectedControlType": "Vector2",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
-                },
-                {
-                    "name": "LeftClick",
-                    "type": "Button",
-                    "id": "43720403-5f6c-40cf-84a0-f5d90d80f9a4",
-                    "expectedControlType": "",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
                 }
             ],
             "bindings": [
                 {
-                    "name": "WASD",
-                    "id": "471cd168-8b28-4389-b7b6-cd0367ebc213",
+                    "name": "2D Vector",
+                    "id": "bdd27163-1b96-45a6-aa77-42338d38c1ed",
                     "path": "2DVector",
                     "interactions": "",
                     "processors": "",
@@ -47,7 +30,7 @@
                 },
                 {
                     "name": "up",
-                    "id": "ae142425-5492-42fc-9dcd-7de57c86d72b",
+                    "id": "746c1a69-8713-4ee6-8f08-d010ff187a47",
                     "path": "<Keyboard>/upArrow",
                     "interactions": "",
                     "processors": "",
@@ -58,7 +41,7 @@
                 },
                 {
                     "name": "down",
-                    "id": "d1124f8a-39ce-4d58-b40e-f84358e4447d",
+                    "id": "129abe67-3f37-4cb6-8a87-0248fe662726",
                     "path": "<Keyboard>/downArrow",
                     "interactions": "",
                     "processors": "",
@@ -69,7 +52,7 @@
                 },
                 {
                     "name": "left",
-                    "id": "9d608fb2-8b0f-4974-a32e-a88a925def17",
+                    "id": "d525922c-8dfa-4d23-9774-664cafa60634",
                     "path": "<Keyboard>/leftArrow",
                     "interactions": "",
                     "processors": "",
@@ -80,7 +63,7 @@
                 },
                 {
                     "name": "right",
-                    "id": "6b35414f-16dc-4237-a3cd-eb64f1518f27",
+                    "id": "f0e1935b-bc3f-4708-b560-330e0a9c584a",
                     "path": "<Keyboard>/rightArrow",
                     "interactions": "",
                     "processors": "",
@@ -88,28 +71,6 @@
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
-                },
-                {
-                    "name": "",
-                    "id": "8fe04609-e5cc-4b31-b2bc-3f315aaf159d",
-                    "path": "<Mouse>/position",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Aim",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "333a88a1-4e18-4848-b377-87fd93edeeca",
-                    "path": "<Mouse>/leftButton",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "LeftClick",
-                    "isComposite": false,
-                    "isPartOfComposite": false
                 }
             ]
         }

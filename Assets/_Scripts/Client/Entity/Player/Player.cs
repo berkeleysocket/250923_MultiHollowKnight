@@ -4,38 +4,37 @@ namespace Ksy.Entity.Compo
 {
     public class Player : Entity
     {
-
-        public Movement MovementCompo { get; private set; }
-        public Renderer RendererCompo { get; private set; }
-        public AnimationPlayer AniPlayerCompo { get; private set; }
+        public Controller _controller { get; private set; }
+        public Movement _movement { get; private set; }
+        public RendererX _randerer { get; private set; }
+        public AnimationPlayer _aniPlayer { get; private set; }
 
         private void Awake()
         {
-            MovementCompo = GetComponent<Movement>();
+            _controller = GetComponent<Controller>();
+            _movement = GetComponent<Movement>();
 
-            AniPlayerCompo = GetComponentInChildren<AnimationPlayer>();
-            RendererCompo = GetComponentInChildren<Renderer>();
+            _aniPlayer = GetComponentInChildren<AnimationPlayer>();
+            _randerer = GetComponentInChildren<RendererX>();
 
-            Debug.Assert(MovementCompo != null, "<color=red>MovementCompo is null!!</color>");
+            Debug.Assert(_movement != null, "<color=red>_movement is null!!</color>");
 
-            Debug.Assert(AniPlayerCompo != null, "<color=red>AniPlayerCompo is null!!</color>");
-            Debug.Assert(RendererCompo != null, "<color=red>RendererCompo is null!!</color>");
+            Debug.Assert(_aniPlayer != null, "<color=red>_aniPlayer is null!!</color>");
+            Debug.Assert(_randerer != null, "<color=red>_randerer is null!!</color>");
 
-            if (MovementCompo != null && inputInfo != null)
-                inputInfo.OnChangedPlayerPos += MovementCompo.SetMoveDir;
+            if (_movement != null && _controller != null)
+                _controller.MoveDir.OnChangedValue += _movement.SetMoveDir;
 
-            if (AniPlayerCompo != null && inputInfo != null)
-                inputInfo.OnChangedPlayerPos += (dir) =>
+            if (_aniPlayer != null && _controller != null)
+                _controller.MoveDir.OnChangedValue += (dir) =>
                 {
                     AniParmType parmT = AniParmType.IsMove;
                     bool isMove = dir != Vector2.zero;
 
-                    AniPlayerCompo.SetAnimation(parmT, isMove);
+                    _aniPlayer.SetAnimation(parmT, isMove);
                 };
-            if (RendererCompo != null && inputInfo != null)
-                inputInfo.OnChangedMousePos += RendererCompo.FilpX;
-            if (inputInfo != null)
-                inputInfo.OnLeftClicked += (pos) => Debug.Log($"<color=yellow>Left Click!! / Pos : {pos}");
+            if (_randerer != null && _controller != null)
+                _controller.MoveDir.OnChangedValue += _randerer.FilpX;
         }
     }
 }

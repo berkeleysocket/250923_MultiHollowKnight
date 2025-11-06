@@ -3,8 +3,8 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using static Control;
 
-[CreateAssetMenu(fileName = "InputInfo_Player", menuName = "SO/Input/Player")]
-public class InputInfo_Player : ScriptableObject, IPlayerActions
+[CreateAssetMenu(fileName = "PlayerInput", menuName = "SO/Input/Player")]
+public class PlayerInput : ScriptableObject, IKeyboardActions
 {
     private Control _listener;
     public Vector2 MoveDir { get; private set; }
@@ -19,13 +19,13 @@ public class InputInfo_Player : ScriptableObject, IPlayerActions
     {
         if(_listener == null) _listener = new Control();
 
-        _listener.Player.Enable();
-        _listener.Player.SetCallbacks(this);
+        _listener.Keyboard.Enable();
+        _listener.Keyboard.SetCallbacks(this);
     }
 
     private void OnDisable()
     {
-        _listener.Player.Disable();
+        _listener.Keyboard.Disable();
     }
     #endregion
 
@@ -39,19 +39,5 @@ public class InputInfo_Player : ScriptableObject, IPlayerActions
         MoveDir = dir;
 
         OnChangedPlayerPos?.Invoke(dir);
-    }
-    public void OnAim(InputAction.CallbackContext context)
-    {
-        Vector2 pos = context.ReadValue<Vector2>();
-        Vector2 worldPos = Camera.main.ScreenToWorldPoint(pos);
-
-        MousePos = worldPos;
-
-        OnChangedMousePos?.Invoke(worldPos);
-    }
-
-    public void OnLeftClick(InputAction.CallbackContext context)
-    {
-        OnLeftClicked?.Invoke(MousePos);
     }
 }

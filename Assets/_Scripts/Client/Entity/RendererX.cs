@@ -3,7 +3,7 @@ using UnityEngine;
 namespace Ksy.Entity.Compo
 {
     [RequireComponent(typeof(SpriteRenderer))]
-    public class Renderer : MonoBehaviour
+    public class RendererX : MonoBehaviour
     {
         private SpriteRenderer _spRenderer;
         public bool IsFilp { get; private set; }
@@ -14,9 +14,8 @@ namespace Ksy.Entity.Compo
 
             Debug.Assert(_spRenderer != null, "<color=red>_spRenderer is null!!</color>");
         }
-        public void FilpX(Vector2 mousePos)
+        public void FilpX(Vector2 dir)
         {
-            Vector2 dir = mousePos - (Vector2)transform.position;
             bool flip = dir.x < 0;
 
             _spRenderer.flipX = flip;
