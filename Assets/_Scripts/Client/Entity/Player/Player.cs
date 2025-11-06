@@ -4,7 +4,7 @@ namespace Ksy.Entity.Compo
 {
     public class Player : Entity
     {
-        [SerializeField] private InputInfo_Player inputInfo;
+
         public Movement MovementCompo { get; private set; }
         public Renderer RendererCompo { get; private set; }
         public AnimationPlayer AniPlayerCompo { get; private set; }
