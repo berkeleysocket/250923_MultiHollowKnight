@@ -1,3 +1,4 @@
+using Ksy.Utility;
 using UnityEngine;
 
 namespace Ksy.Entity.Compo
@@ -11,6 +12,7 @@ namespace Ksy.Entity.Compo
 
         private void Awake()
         {
+            DebugX.Log("Hellow World!", Color.red, true, 25);
             _controller = GetComponent<Controller>();
             _movement = GetComponent<Movement>();
 
