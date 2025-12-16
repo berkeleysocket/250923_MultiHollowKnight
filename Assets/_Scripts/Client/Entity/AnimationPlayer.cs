@@ -1,3 +1,4 @@
+using Ksy.Utility;
 using UnityEngine;
 
 namespace Ksy.Entity.Compo
@@ -11,7 +12,7 @@ namespace Ksy.Entity.Compo
         {
             _animator = GetComponent<Animator>();
 
-            Debug.Assert(_animator != null, "<color=red>_animator is null!!<color>");
+            DebugX.Assert(_animator != null, "_animator is null!!");
         }
         public void SetAnimation(AniParmType parmT, bool value)
         {

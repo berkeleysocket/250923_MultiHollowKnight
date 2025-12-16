@@ -386,7 +386,7 @@ GameObject:
   - component: {fileID: 763928856}
   - component: {fileID: 763928854}
   - component: {fileID: 763928855}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -775,7 +775,7 @@ GameObject:
   - component: {fileID: 1203877349}
   - component: {fileID: 1203877350}
   - component: {fileID: 1203877351}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Visual
   m_TagString: Untagged
   m_Icon: {fileID: 0}

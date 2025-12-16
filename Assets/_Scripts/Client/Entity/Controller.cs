@@ -9,10 +9,10 @@ namespace Ksy.Entity.Compo
 
         private void Awake()
         {
-            inputAction.OnChangedPlayerPos += (pos) => MoveDir.Value = pos;
+            inputAction.OnChangedPlayerPos += (pos) => Input_Dir.Value = pos;
         }
 
-        public NotifyValue<Vector2> MoveDir { get; private set; } = new NotifyValue<Vector2>();
+        public NotifyValue<Vector2> Input_Dir { get; private set; } = new NotifyValue<Vector2>();
     }
 }
 
