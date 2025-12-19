@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Ksy.Manager
+namespace Ksy.Utility
 {
     public abstract class MonoSingleton<T> : MonoBehaviour where T : MonoBehaviour
     {

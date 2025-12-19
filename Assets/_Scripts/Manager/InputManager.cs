@@ -1,6 +1,11 @@
-using Ksy.Manager;
+using System;
+using UnityEngine;
+using Ksy.Utility;
 
-public class InputManager : MonoSingleton<InputManager>
+namespace Ksy.Manager
 {
-    
+    public class InputManager : MonoSingleton<InputManager>
+    {
+        //[SerializeField] 
+    }
 }
