@@ -6,7 +6,7 @@ using static Control;
 [CreateAssetMenu(fileName = "EntityControllerSO", menuName = "SO")]
 public class EntityControllerSO : ScriptableObject, IKeyboardActions
 {
-    private Control _listener;
+    private Control _controller;
 
     public Action<Vector2> OnChangedDir;
     public Action<Vector2> OnChangedMousePos;
@@ -15,15 +15,15 @@ public class EntityControllerSO : ScriptableObject, IKeyboardActions
     #region Unity Evenet
     private void OnEnable()
     {
-        if(_listener == null) _listener = new Control();
+        if(_controller == null) _controller = new Control();
 
-        _listener.Keyboard.Enable();
-        _listener.Keyboard.SetCallbacks(this);
+        _controller.Keyboard.Enable();
+        _controller.Keyboard.SetCallbacks(this);
     }
 
     private void OnDisable()
     {
-        _listener.Keyboard.Disable();
+        _controller.Keyboard.Disable();
     }
     #endregion
 

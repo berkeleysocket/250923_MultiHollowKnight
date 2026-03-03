@@ -7,7 +7,7 @@ namespace Ksy.Entity.Compo
     {
         private Rigidbody2D _rb;
 
-        [SerializeField] private float speed = 1f;
+        [SerializeField] private float speed = 3f;
         [HideInInspector] public Vector2 MoveDir = Vector2.zero;
 
         #region Unity Event
@@ -17,7 +17,7 @@ namespace Ksy.Entity.Compo
 
             Debug.Assert(_rb != null, "<color=red>_rb is null!!</color>");
         }
-        private void Update()
+        void FixedUpdate()
         {
             Move();
         }

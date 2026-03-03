@@ -1,16 +1,21 @@
+using Ksy.Utility;
 using UnityEngine;
 
 namespace Ksy.Entity.Compo
 {
     public class EntityController : MonoBehaviour
     {
-        [SerializeField] private EntityControllerSO listener;
+        public NotifyValue<Vector2> MoveDir { get; private set; } = new NotifyValue<Vector2>();
 
+        [SerializeField] private EntityControllerSO contorller;
+
+        #region Unity Engine
         private void Awake()
         {
-            listener.OnChangedDir += (dir)=> Dir = dir;
+            this.contorller.OnChangedDir += SetDir;
         }
+        #endregion
 
-        public Vector2 Dir { get; private set; }
+        private void SetDir(Vector2 dir) => this.MoveDir.Value = dir;
     }
 }

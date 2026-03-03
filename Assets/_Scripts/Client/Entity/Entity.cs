@@ -1,5 +1,6 @@
 using Ksy.Entity.Compo;
 using Ksy.Utility;
+
 using UnityEngine;
 
 namespace Ksy.Entity
@@ -21,10 +22,10 @@ namespace Ksy.Entity
             DebugX.Assert(Randerer != null, "Randerer is null!", false);
 
             if (Movement != null && Controller != null)
-                Controller.Input_Dir.OnChangedValue += Movement.SetMoveDir;
+                Controller.MoveDir.OnChangedValue += Movement.SetMoveDir;
 
             if (Randerer != null && Controller != null)
-                Controller.Input_Dir.OnChangedValue += Randerer.FilpX;
+                Controller.MoveDir.OnChangedValue += Randerer.FilpX;
         }
     }
 }
