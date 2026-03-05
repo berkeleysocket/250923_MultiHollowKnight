@@ -3,12 +3,12 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using static Control;
 
-[CreateAssetMenu(fileName = "EntityControllerSO", menuName = "SO")]
-public class EntityControllerSO : ScriptableObject, IKeyboardActions
+[CreateAssetMenu(fileName = "EM_ControllerSO", menuName = "SO")]
+public class EM_ControllerSO : ScriptableObject, IKeyboardActions
 {
     private Control _controller;
 
-    public Action<Vector2> OnChangedDir;
+    public Action<Vector2> OnPressedMoveKey;
     public Action<Vector2> OnChangedMousePos;
     public Action<Vector2> OnLeftClicked;
 
@@ -31,6 +31,6 @@ public class EntityControllerSO : ScriptableObject, IKeyboardActions
     {
         Vector2 dir = context.ReadValue<Vector2>();
 
-        OnChangedDir?.Invoke(dir);
+        OnPressedMoveKey?.Invoke(dir);
     }
 }

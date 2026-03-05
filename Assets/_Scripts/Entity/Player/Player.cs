@@ -1,4 +1,4 @@
-namespace Ksy.Entity.Compo
+namespace Ksy.Entity.Module
 {
     public class Player : Entity
     {

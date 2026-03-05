@@ -1,19 +1,28 @@
 using UnityEngine;
 
-namespace Ksy.Entity.Compo
+namespace Ksy.Entity.Module
 {
-    [RequireComponent(typeof(SpriteRenderer))]
-    public class RendererX : MonoBehaviour
+    [CreateAssetMenu(fileName = "EM_RendererXSO", menuName = "SO")]
+    public class EM_RendererXSO : MonoBehaviour
     {
-        private SpriteRenderer _spRenderer;
         public bool IsFilp { get; private set; }
 
+        private SpriteRenderer _spRenderer;
+
+        public void Init(SpriteRenderer spRenderer)
+        {
+            this._spRenderer = spRenderer;
+        }
+
+        #region Unity Event
         private void Awake()
         {
             _spRenderer = GetComponent<SpriteRenderer>();
 
             Debug.Assert(_spRenderer != null, "<color=red>_spRenderer is null!!</color>");
         }
+        #endregion
+        #region Module
         public void FilpX(Vector2 dir)
         {
             if (dir == Vector2.zero) return;
@@ -22,11 +31,11 @@ namespace Ksy.Entity.Compo
             _spRenderer.flipX = flip;
             IsFilp = flip;
         }
-
         public void FilpX(bool value)
         {
             _spRenderer.flipX = value;
             IsFilp = value;
         }
+        #endregion
     }
 }
