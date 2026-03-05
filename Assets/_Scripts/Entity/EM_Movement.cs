@@ -1,10 +1,14 @@
+using Ksy.Utility;
+using System;
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace Ksy.Entity.Module
 {
-    [CreateAssetMenu(fileName = "EM_MovementSO", menuName = "SO")]
-    public class EM_MovementSO : MonoBehaviour
+    public class EM_Movement : MonoBehaviour
     {
+        public event Action<Vector2> OnMove;
+        
         [SerializeField] private float speed = 3f;
         
         private Rigidbody2D _rb;
@@ -26,14 +30,18 @@ namespace Ksy.Entity.Module
         {
             MoveDir = Vector2.zero;
         }
-        public void SetDirection(Vector2 dir)
+        public void SetMoveDirection(Vector2 dir)
         {
+            OnMove?.Invoke(dir);
             MoveDir = dir.normalized;
         }
         void Move()
         {
             if(_rb != null)
+            {
+                DebugX.Log("Move");
                 _rb.linearVelocity = MoveDir * speed;
+            }
         }
         #endregion
     }

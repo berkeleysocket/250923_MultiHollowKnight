@@ -2,8 +2,7 @@ using UnityEngine;
 
 namespace Ksy.Entity.Module
 {
-    [CreateAssetMenu(fileName = "EM_RendererXSO", menuName = "SO")]
-    public class EM_RendererXSO : MonoBehaviour
+    public class EM_RendererX : MonoBehaviour
     {
         public bool IsFilp { get; private set; }
 
@@ -14,14 +13,6 @@ namespace Ksy.Entity.Module
             this._spRenderer = spRenderer;
         }
 
-        #region Unity Event
-        private void Awake()
-        {
-            _spRenderer = GetComponent<SpriteRenderer>();
-
-            Debug.Assert(_spRenderer != null, "<color=red>_spRenderer is null!!</color>");
-        }
-        #endregion
         #region Module
         public void FilpX(Vector2 dir)
         {

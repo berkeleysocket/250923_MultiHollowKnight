@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using static Control;
 
-[CreateAssetMenu(fileName = "EM_ControllerSO", menuName = "SO")]
+[CreateAssetMenu(fileName = "EM_ControllerSO", menuName = "SO/EntityModule/EM_ControllerSO")]
 public class EM_ControllerSO : ScriptableObject, IKeyboardActions
 {
     private Control _controller;
