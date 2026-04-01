@@ -1,4 +1,10 @@
-public interface IRrecoverable
+using System;
+
+namespace Ksy.Agent.Module.HealthSystem
 {
-    public int GetHeal(int healValue);
+    public interface IRrecoverable
+    {
+        public event Action<int> OnRecovered;
+        public int GetHeal(int healValue);
+    }
 }

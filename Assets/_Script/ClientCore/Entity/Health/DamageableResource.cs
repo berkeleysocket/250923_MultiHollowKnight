@@ -1,42 +1,46 @@
 using System;
 using UnityEngine;
 
-public abstract class DamageableResource : MonoBehaviour
+namespace Ksy.Agent.Module.HealthSystem
 {
-    protected bool isBrocked
+    public abstract class DamageableResource : MonoBehaviour
     {
-        get
+        protected bool isBrocked
         {
-            return value <= minValue;
+            get
+            {
+                return value <= minValue;
+            }
         }
-    }
-    protected bool isDamageable;
-    protected int maxValue;
-    protected int minValue;
-    protected int value;
-    public event Action OnHit;
-    public event Action OnHurt;
+        protected bool isDamageable;
+        protected int maxValue;
+        protected int minValue;
+        protected int value;
+        public event Action OnHit;
+        public event Action OnHurt;
 
-    public void Initialize(int maxValue, int minValue, int startValue)
-    {
-        this.maxValue = maxValue;
-        this.minValue = minValue;
-        this.value = startValue;
-    }
-    //public int GetValue() => _value;
-    public int GetValue()
-    {
-        return value;
-    }
-    public virtual int GetDamage(int damageValue)
-    {
-        OnHit?.Invoke();
+        public void Initialize(int maxValue, int minValue, int startValue)
+        {
+            this.maxValue = maxValue;
+            this.minValue = minValue;
+            this.value = startValue;
+        }
+        //public int GetValue() => _value;
+        public int GetValue()
+        {
+            return value;
+        }
+        public virtual int GetDamage(int damageValue)
+        {
+            OnHit?.Invoke();
 
-        if (!isDamageable) return value;
-        if (isBrocked) return minValue;
+            if (!isDamageable) return value;
+            if (isBrocked) return minValue;
 
-        value -= damageValue;
-        OnHurt?.Invoke();
-        return value;
+            value -= damageValue;
+            OnHurt?.Invoke();
+
+            return value;
+        }
     }
 }
