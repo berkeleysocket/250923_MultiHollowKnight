@@ -5,42 +5,68 @@ namespace Ksy.Agent.Module.HealthSystem
 {
     public abstract class DamageableResource : MonoBehaviour
     {
-        protected bool isBrocked
+        public event Action<DamageData> OnHit;
+        public event Action<DamageResultData> OnHurt;
+
+        public int MaxValue { get; private set; }
+        public int MinValue { get; private set; }
+        public bool isDamageable { get; private set; }
+        
+        public bool IsBroken
         {
             get
             {
-                return value <= minValue;
+                return Value <= MinValue;
             }
         }
-        protected bool isDamageable;
-        protected int maxValue;
-        protected int minValue;
-        protected int value;
-        public event Action OnHit;
-        public event Action OnHurt;
+        public int Value
+        {
+            get
+            {
+                return _value;
+            }
+            set
+            {
+                _value = Mathf.Clamp(_value + value, MinValue, MaxValue);
+            }
+        }
+
+        private int _value;
 
         public void Initialize(int maxValue, int minValue, int startValue)
         {
-            this.maxValue = maxValue;
-            this.minValue = minValue;
-            this.value = startValue;
+            this.MaxValue = maxValue;
+            this.MinValue = minValue;
+            this.Value = startValue;
         }
-        //public int GetValue() => _value;
         public int GetValue()
         {
-            return value;
+            return Value;
         }
-        public virtual int GetDamage(int damageValue)
+        public virtual int GetDamage(DamageData damageData)
         {
-            OnHit?.Invoke();
+            OnHit?.Invoke(damageData);
 
-            if (!isDamageable) return value;
-            if (isBrocked) return minValue;
+            if (!isDamageable) return Value;
+            if (IsBroken) return MinValue;
 
-            value -= damageValue;
-            OnHurt?.Invoke();
+            Value -= damageData.damageValue;
 
-            return value;
+            DamageResultData hurtData = new DamageResultData(damageData.giver, damageData, Value);
+            OnHurt?.Invoke(hurtData);
+
+            return Value;
+        }
+        public virtual void GetKillDamage()
+        {
+            Entity giver = null;
+            AttackType attackType = AttackType.System;
+            DamageFlag damageType = DamageFlag.Kill;
+            int damage = Value;
+
+            DamageData damageData = DamageData.Create(giver, attackType, damageType, damage);
+
+            GetDamage(damageData);
         }
     }
 }
