@@ -2,21 +2,19 @@
 {
     public readonly struct RecoverData
     {
-        public RecoverData(Agent giver, int resourceValue, int recoverValue)
+        public RecoverData(Entity giver, int recoverValue)
         {
             this.giver = giver;
-            this.resourceValue = resourceValue;
             this.recoverValue = recoverValue;
         }
 
-        public static RecoverData Create(Agent giver, int resourceValue, int recoverValue)
+        public static RecoverData Create(Entity giver, int recoverValue)
         {
-            RecoverData result = new RecoverData(giver, resourceValue, recoverValue);
+            RecoverData result = new RecoverData(giver, recoverValue);
             return result;
         }
 
-        public readonly Agent giver;
-        public readonly int resourceValue;
+        public readonly Entity giver;
         public readonly int recoverValue;
     }
 }

@@ -1,10 +1,12 @@
 using System;
 using UnityEngine;
-
-public abstract class Item : MonoBehaviour, ICollectable
+public abstract class Item : Entity, ICollectable
 {
-    public event Action<Agent> OnCollected;
-    public virtual void Collect(Agent collector)
+    [SerializeField] private ItemAttributeSO attribute;
+
+    public event Action<Entity> OnCollected;
+
+    public virtual void Collect(Entity collector)
     {
         OnCollected.Invoke(collector);
     }

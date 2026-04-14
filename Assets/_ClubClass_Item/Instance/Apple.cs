@@ -1,9 +1,10 @@
 using Ksy.AgentSystem.ModuleSystem.HealthSystem;
+using UnityEngine;
 
-public class HealPosition : Item
+public class Apple : Item
 {
     private RecoverData _recoverData;
-    public override void Collect(Agent collector)
+    public override void Collect(Entity collector)
     {
         base.Collect(collector);
 

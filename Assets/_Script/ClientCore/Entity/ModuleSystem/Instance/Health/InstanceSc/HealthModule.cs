@@ -16,7 +16,7 @@ namespace Ksy.AgentSystem.ModuleSystem.HealthSystem
         }
         public void Recover(RecoverData recover)
         {
-            Agent giver = recover.giver;
+            Entity giver = recover.giver;
             int recoverValue = recover.recoverValue;
 
             this.Value += recoverValue;
