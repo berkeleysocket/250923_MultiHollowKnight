@@ -7,7 +7,7 @@ public class HealPosition : Item
     {
         base.Collect(collector);
 
-        if(TryGetComponent<IRrecoverable>(out IRrecoverable recoverableObj))
+        if(collector.TryGetComponent<IRrecoverable>(out IRrecoverable recoverableObj))
         {
             recoverableObj.Recover(_recoverData);
         }

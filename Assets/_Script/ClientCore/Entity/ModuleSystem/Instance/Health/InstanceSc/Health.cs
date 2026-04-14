@@ -21,7 +21,7 @@ namespace Ksy.AgentSystem.ModuleSystem.HealthSystem
 
             this.Value += recoverValue;
 
-            RecoverResultData resultData = RecoverResultData.Create(giver, recoverValue);
+            RecoverResultData resultData = RecoverResultData.Create(giver, Value, recoverValue);
             OnRecovered.Invoke(resultData);   
         }
 

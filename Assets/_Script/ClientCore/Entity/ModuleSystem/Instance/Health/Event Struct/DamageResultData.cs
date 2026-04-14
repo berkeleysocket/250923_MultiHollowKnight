@@ -1,16 +1,20 @@
-using UnityEngine;
-
 namespace Ksy.AgentSystem.ModuleSystem.HealthSystem
 {
     public readonly struct DamageResultData
     {
-        public DamageResultData(global::Agent giver, DamageData damageData, int currentDamageableResourceValue)
+        public DamageResultData(Agent giver, DamageData damageData, int resourceValue)
         {
             this.giver = giver;
             this.damageData = damageData;
-            this.resourceValue = currentDamageableResourceValue;
+            this.resourceValue = resourceValue;
         }
-        public readonly global::Agent giver;
+        public static DamageResultData Create(Agent giver, DamageData damageData, int resourceValue)
+        {
+            DamageResultData result = new DamageResultData(giver, damageData, resourceValue);
+            return result;
+        }
+
+        public readonly Agent giver;
         public readonly DamageData damageData;
         public readonly int resourceValue;
     }

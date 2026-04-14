@@ -45,7 +45,7 @@ public class SpritePostprocessor : AssetPostprocessor
 
         if (materialChanged)
         {
-            Debug.Log($"Assigned Sprite-Lit material to Prefab: {assetPath}");
+            Debug.Log($"Assigned Sprite-Lit material to ItemPrefab: {assetPath}");
         }
     }
 }
