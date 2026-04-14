@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-namespace Ksy.Agent.Module
+namespace Ksy.AgentSystem.ModuleSystem
 {
     public abstract class ModuleOwner : MonoBehaviour
     {
@@ -28,6 +28,8 @@ namespace Ksy.Agent.Module
             foreach (IModule module in _modules.Values)
             {
                 module.Initialize(this);
+
+                CustomLog.Log(module);
             }
         }
         protected virtual void AfterInitComponents()

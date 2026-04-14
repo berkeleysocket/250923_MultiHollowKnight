@@ -1,4 +1,4 @@
-using Ksy.Agent.Module;
+using Ksy.AgentSystem.ModuleSystem;
 
 public class Agent : ModuleOwner
 {

@@ -1,4 +1,4 @@
-﻿namespace Ksy.Agent.Module.HealthSystem
+﻿namespace Ksy.AgentSystem.ModuleSystem.HealthSystem
 {
     public readonly struct RecoverData
     {

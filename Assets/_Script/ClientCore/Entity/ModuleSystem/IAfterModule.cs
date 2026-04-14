@@ -1,4 +1,4 @@
-namespace Ksy.Agent.Module
+namespace Ksy.AgentSystem.ModuleSystem
 {
     public interface IAfterModule
     {

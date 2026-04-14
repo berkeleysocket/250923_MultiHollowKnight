@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Ksy.Agent.Module.HealthSystem
+namespace Ksy.AgentSystem.ModuleSystem.HealthSystem
 {
     public readonly struct DamageResultData
     {
@@ -8,10 +8,10 @@ namespace Ksy.Agent.Module.HealthSystem
         {
             this.giver = giver;
             this.damageData = damageData;
-            this.currentDamageableResourceValue = currentDamageableResourceValue;
+            this.resourceValue = currentDamageableResourceValue;
         }
         public readonly global::Agent giver;
         public readonly DamageData damageData;
-        public readonly int currentDamageableResourceValue;
+        public readonly int resourceValue;
     }
 }

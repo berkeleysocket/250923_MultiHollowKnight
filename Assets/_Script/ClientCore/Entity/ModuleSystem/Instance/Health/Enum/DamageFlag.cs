@@ -1,6 +1,6 @@
 using System;
 
-namespace Ksy.Agent.Module.HealthSystem
+namespace Ksy.AgentSystem.ModuleSystem.HealthSystem
 {
     [Flags]
     public enum DamageFlag : byte

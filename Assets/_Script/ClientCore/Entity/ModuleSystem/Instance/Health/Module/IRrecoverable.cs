@@ -1,6 +1,6 @@
 using System;
 
-namespace Ksy.Agent.Module.HealthSystem
+namespace Ksy.AgentSystem.ModuleSystem.HealthSystem
 {
     public interface IRrecoverable
     {
