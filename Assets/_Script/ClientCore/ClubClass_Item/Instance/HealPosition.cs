@@ -3,7 +3,7 @@ using Ksy.Agent.Module.HealthSystem;
 public class HealPosition : Item
 {
     private RecoverData _recoverData;
-    public override void Collect(Entity collector)
+    public override void Collect(Agent collector)
     {
         base.Collect(collector);
 

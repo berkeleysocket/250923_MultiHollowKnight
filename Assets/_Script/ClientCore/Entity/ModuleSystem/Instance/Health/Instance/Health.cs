@@ -8,7 +8,7 @@ namespace Ksy.Agent.Module.HealthSystem
 
         public void Recover(RecoverData recover)
         {
-            Entity giver = recover.giver;
+            global::Agent giver = recover.giver;
             int recoverValue = recover.recoverValue;
 
             this.Value += recoverValue;

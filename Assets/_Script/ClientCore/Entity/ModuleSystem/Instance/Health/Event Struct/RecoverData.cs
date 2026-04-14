@@ -2,7 +2,7 @@
 {
     public readonly struct RecoverData
     {
-        public readonly Entity giver;
+        public readonly global::Agent giver;
         public readonly int recoverValue;
     }
 }

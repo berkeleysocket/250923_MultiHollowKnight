@@ -59,7 +59,7 @@ namespace Ksy.Agent.Module.HealthSystem
         }
         public virtual void GetKillDamage()
         {
-            Entity giver = null;
+            global::Agent giver = null;
             AttackType attackType = AttackType.System;
             DamageFlag damageType = DamageFlag.Kill;
             int damage = Value;

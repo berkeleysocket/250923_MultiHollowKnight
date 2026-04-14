@@ -3,8 +3,8 @@ using UnityEngine;
 
 public abstract class Item : MonoBehaviour, ICollectable
 {
-    public event Action<Entity> OnCollected;
-    public virtual void Collect(Entity collector)
+    public event Action<Agent> OnCollected;
+    public virtual void Collect(Agent collector)
     {
         OnCollected.Invoke(collector);
     }
