@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Ksy.AgentSystem.ModuleSystem.HealthSystem
 {
-    public class Health : DamageableResource, IRrecoverable, IModule
+    public class HealthModule : DamageableResource, IRrecoverable, IModule
     {
         [SerializeField] private TMP_Text hpText;
         public event Action<RecoverResultData> OnRecovered;

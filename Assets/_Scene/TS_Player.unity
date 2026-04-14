@@ -358,6 +358,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1576108253}
   - component: {fileID: 1576108254}
+  - component: {fileID: 1576108255}
   m_Layer: 0
   m_Name: Visual
   m_TagString: Untagged
@@ -440,6 +441,18 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!114 &1576108255
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1576108252}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f36248295ce17214988cc5629a6da9f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Ksy.AgentSystem.ModuleSystem.RenderSystem.AgentRenderModule
 --- !u!1 &1777898178
 GameObject:
   m_ObjectHideFlags: 0
