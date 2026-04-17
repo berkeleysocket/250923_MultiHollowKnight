@@ -10,10 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cb0bd202f1a7c87498ef03951e6d65e5, type: 3}
-  m_Name: ItemAttribute_Apple
+  m_Name: SpeedUp_3
   m_EditorClassIdentifier: Assembly-CSharp::ItemAttributeSO
-  <attributeFlag>k__BackingField: 110
-  <duration>k__BackingField: 2
-  <attackPowerUpValue>k__BackingField: 0
-  <recoverValue>k__BackingField: 1
-  <speedUpValue>k__BackingField: 2
+  <AttributeType>k__BackingField: 3
+  <Duration>k__BackingField: 3
+  <Value>k__BackingField: 3

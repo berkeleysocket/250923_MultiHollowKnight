@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 public abstract class Item : Entity, ICollectable
 {
-    [SerializeField] private ItemAttributeSO attribute;
+    [field : SerializeField] protected ItemAttributeSO[] attributeData { get; private set; }
 
     public event Action<Entity> OnCollected;
 

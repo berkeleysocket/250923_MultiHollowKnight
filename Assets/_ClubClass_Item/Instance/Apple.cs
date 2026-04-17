@@ -4,6 +4,10 @@ using UnityEngine;
 public class Apple : Item
 {
     private RecoverData _recoverData;
+    private void Start()
+    {
+        //_recoverData.recoverValue = attributeData
+    }
     public override void Collect(Entity collector)
     {
         base.Collect(collector);
