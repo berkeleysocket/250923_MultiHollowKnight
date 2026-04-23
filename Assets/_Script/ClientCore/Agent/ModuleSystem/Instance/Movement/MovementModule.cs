@@ -7,7 +7,6 @@ namespace Ksy.AgentSystem.ModuleSystem
     public class MovementModule : MonoBehaviour, IModule, IMovable
     {
         public event Action OnMove;
-        
         private Transform ownerTransform
         {
             get

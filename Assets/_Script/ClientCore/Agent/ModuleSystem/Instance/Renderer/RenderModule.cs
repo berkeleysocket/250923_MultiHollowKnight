@@ -15,7 +15,7 @@ namespace Ksy.AgentSystem.ModuleSystem.RenderSystem
 
             CustomLog.Assert(Animator != null, $"{gameObject.name}'s Animator is null");
         }
-        public void PlayerClip(int clipHash, float crossFadeDuration = 0, int layerMask = 0, float normalizedTime = 0)
+        public void PlayClip(int clipHash, float crossFadeDuration = 0, int layerMask = 0, float normalizedTime = 0)
         {
             //애니메이션을 전환시키는 함수
             //crossFadeDuration : 실제 시간으로 몇 초 동안 섞을 것인가.
