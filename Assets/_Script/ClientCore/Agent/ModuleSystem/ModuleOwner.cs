@@ -6,11 +6,12 @@ using UnityEngine;
 
 namespace Ksy.AgentSystem.ModuleSystem
 {
+    [RequireComponent(typeof(Rigidbody2D))]
     public abstract class ModuleOwner : MonoBehaviour
     {
         private Dictionary<Type, IModule> _modules = new Dictionary<Type, IModule>();
 
-        private void Awake()
+        protected virtual void Awake()
         {
             Initialize();
             InitializeComponents();

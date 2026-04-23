@@ -4,7 +4,7 @@ using UnityEngine;
 namespace Ksy.AgentSystem.ModuleSystem.RenderSystem
 {
     [RequireComponent(typeof(Animator))]
-    public class EntityRenderModule : MonoBehaviour, IModule
+    public class RenderModule : MonoBehaviour, IModule
     {
         public Animator Animator { get; private set; }
         private ModuleOwner _owner;

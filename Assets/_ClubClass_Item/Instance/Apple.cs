@@ -8,7 +8,7 @@ public class Apple : Item
     {
         //_recoverData.recoverValue = attributeData
     }
-    public override void Collect(Entity collector)
+    public override void Collect(Agent collector)
     {
         base.Collect(collector);
 

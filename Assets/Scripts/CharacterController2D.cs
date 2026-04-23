@@ -87,7 +87,7 @@ public class CharacterController2D : MonoBehaviour
 
         animatorGroundedBool = Animator.StringToHash("Grounded");
         animatorRunningSpeed = Animator.StringToHash("RunningSpeed");
-        animatorJumpTrigger = Animator.StringToHash("Jump");
+        animatorJumpTrigger = Animator.StringToHash("_jump");
 
         CanMove = true;
     }
