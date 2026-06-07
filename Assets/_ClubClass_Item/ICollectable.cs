@@ -1,7 +1,10 @@
 using System;
 
-public interface ICollectable 
+namespace Ksy.ItemSystem
 {
-    public event Action<Agent> OnCollected;
-    public void Collect(Agent collector);
+    public interface ICollectable
+    {
+        public event Action<ICollectable> OnCollected;
+        public void Collect(KHG_Player collector);
+    }
 }

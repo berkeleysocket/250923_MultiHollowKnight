@@ -1,4 +1,5 @@
 using Ksy.AgentSystem.ModuleSystem;
+using UnityEngine.SceneManagement;
 
 namespace Ksy.AgentSystem
 {
@@ -6,6 +7,7 @@ namespace Ksy.AgentSystem
     {
         protected override void Awake()
         {
+            DontDestroyOnLoad(gameObject);
             base.Awake();
             input.OnMoveKeyPressed += GetModule<MovementModule>().Move;
         }
